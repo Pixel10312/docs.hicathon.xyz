@@ -1,0 +1,47 @@
+$font: "Source Code Pro", "Courier New", monospace;
+@import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inconsolata&display=swap);
+
+//Colors
+$light-grey: #A0A1A3;
+$not-quite-white: #F3F5F3;
+$not-quite-black: #111111;
+$shadow-light: rgba(0, 0, 0, 0.13);
+$shadow-dark: rgba(0, 0, 0, 0.56);
+
+html, body {
+    height: max-content;
+    font-family: 'Source Code Pro';
+    font-size: 20px;
+    line-height: 30px;
+    padding: 0px;
+    margin: 0;
+    scroll-behavior: smooth;
+    background-color: $not-quite-white;
+    color: $not-quite-black;
+}
+
+body::-webkit-scrollbar {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: $not-quite-white;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $light-grey;
+    -webkit-border-radius: 10px;
+}
+
+.page__wrapper {
+    position: relative;
+    .page__content {
+        margin-left: 18%;
+        margin-right: 18%;
+        @media (max-width: 768px) {
+            margin-top: 20%; 
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+}
