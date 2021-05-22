@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `hicathon`,
+    title: `hicathon-docs`,
     description: `A simple documentation website for hicathon 2021.`,
     author: `@homeworkpunks`,
   },
