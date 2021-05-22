@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Helmet } from "gatsby"
+import { Helmet } from "gatsby-plugin-react-helmet"
 
 // styles
 import '../styles/styles.scss'
