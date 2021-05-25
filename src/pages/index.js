@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
-import * as React from "react"
-import { Helmet } from "gatsby"
-=======
 //import lib
 import React, { useState } from "react"
 import { useStaticQuery, Link} from "gatsby"
 import { Helmet } from "react-helmet"
->>>>>>> Stashed changes
 
 //import components
 import Logo from '../components/logo'
