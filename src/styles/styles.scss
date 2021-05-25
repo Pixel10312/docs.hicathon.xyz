@@ -6,6 +6,7 @@ $font: "Source Code Pro", "Courier New", monospace;
 $light-grey: #A0A1A3;
 $not-quite-white: #F3F5F3;
 $not-quite-black: #111111;
+$shadow-placeholder: rgba(0, 0, 0, 0);
 $shadow-light: rgba(0, 0, 0, 0.13);
 $shadow-dark: rgba(0, 0, 0, 0.56);
 
@@ -13,7 +14,6 @@ html, body {
     height: max-content;
     font-family: 'Source Code Pro';
     font-size: 20px;
-    line-height: 30px;
     padding: 0px;
     margin: 0;
     scroll-behavior: smooth;
@@ -21,27 +21,122 @@ html, body {
     color: $not-quite-black;
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: block;
     width: 10px;
     height: 10px;
     background-color: $not-quite-white;
 }
 
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: $light-grey;
     -webkit-border-radius: 10px;
 }
 
-.page__wrapper {
-    position: relative;
-    .page__content {
-        margin-left: 18%;
-        margin-right: 18%;
-        @media (max-width: 768px) {
-            margin-top: 20%; 
-            margin-left: 10%;
-            margin-right: 10%;
+//navigation menu
+.page__menu {
+    position: fixed;
+    width: 20rem;
+    max-width: none;
+    height: 100%;
+    box-shadow: 10px 10px 25px $shadow-light;
+    overflow: scroll;
+    .page__menu__content {
+        padding-left: 12%;
+        padding-right: 15%;
+        font-size: 17px;
+        line-height: 40px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid $shadow-light;
+        .page__menu__component {
+            a {
+                width: 100%;
+                padding: 5px;
+                text-decoration: none;
+                color: $not-quite-black;
+                border-right: 2px solid $shadow-placeholder;
+                border-bottom: 2px solid $shadow-placeholder;
+                transition: 0.5s;
+                transition-timing-function: ease-out;
+            }
+            a:hover {
+                padding: 5px;
+                border-bottom: 2px solid $shadow-light;
+                border-right: 2px solid $shadow-light;
+            }
+            .article__menu__active {
+                transition: 0.2s;
+                padding: 5px;
+                border-bottom: 2px solid $not-quite-black;
+                border-right: 2px solid $not-quite-black;
+                box-shadow: 5px 5px 25px $shadow-light;
+            }
+            .article__menu__active:hover {
+                transition: 0.2s;
+                padding: 5px;
+                border-bottom: 2px solid $not-quite-black;
+                border-right: 2px solid $not-quite-black;
+            }
+            padding-bottom: 25px;
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0px;
+        }
+        li {
+            padding-left: 20px;
+            border-left: 1px solid $shadow-light;
+        }
+        &:last-child {
+            padding-bottom: 50px;
         }
     }
+
+}
+
+//article content
+.page__wrapper {
+    position: relative;
+    .logo {
+        padding-left: 50px;
+        padding-top: 50px;
+        padding-bottom: 8vh;
+        @media (max-width: 768px) {
+            margin-left: 4%;
+        }
+    }
+    .page__content {
+        padding-left: 25rem;
+        padding-top: 3rem;
+        padding-right: 5rem;
+        padding-bottom: 5rem;
+        
+
+        .article__parse__string {
+            h1 {
+                padding-top: 50px;
+            }
+            h2, h3, h4, h5, h6 {
+                padding-top: 50px;
+            }
+            p {
+                
+                line-height: 30px;
+            }
+            
+            a {
+                color: $not-quite-black;
+            }
+        }
+    }
+}
+
+hr {
+    width: 100%;
+    opacity: 30%;
 }
