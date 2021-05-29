@@ -1,1 +1,0 @@
-A simple documentation website for hicathon.
