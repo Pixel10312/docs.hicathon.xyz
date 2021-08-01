@@ -27,13 +27,13 @@ const Event = () => {
 
     return (
         events.map(({ ...event }) => (
-            <div className="card__menu__component">
+            <div className="page__menu__component">
                 {events.eventName}
                 <ul>
                 {event.articles.map(({ slug, ...article }) => (
-                    <div className="card__component__wrap">
+                    <div className="page__component__wrap">
                         <li>
-                            <Link key={slug} to={`/${slug}`}>
+                            <Link key={slug} to={`/${slug}`} activeClassName="article__menu__active">
                                 {article.name} 
                             </Link>
                         </li>

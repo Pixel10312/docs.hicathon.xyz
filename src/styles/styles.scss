@@ -31,7 +31,7 @@ html, body {
 
 ::-webkit-scrollbar-thumb {
     background-color: $light-grey;
-    -webkit-border-radius: 10px;
+    border-radius: 10px;
 }
 
 //navigation menu
@@ -102,6 +102,7 @@ html, body {
             transition: 0.2s ease;
         }
         li:hover {
+            border-left: 1px solid $shadow-dark;
             @media (min-width: 1025px) {
                 box-shadow: 0px 0px 45px 1px $shadow-light;
             }
