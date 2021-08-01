@@ -18,7 +18,7 @@
     "gatsby-plugin-sharp": "^3.2.1",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^3.4.0",
-    "gatsby-source-graphcms": "^2.5.2",
+    "gatsby-source-graphql": "^3.5.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "gsap": "^3.6.1",
     "node-fetch": "^2.6.1",

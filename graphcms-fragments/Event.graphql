@@ -1,7 +1,10 @@
-fragment Product on Product {
+fragment Event on Event {
   stage
   remoteId: id
   createdAt
+  updatedAt
+  publishedAt
+  eventName
   createdBy {
     ... on User {
       remoteTypeName: __typename
@@ -9,7 +12,6 @@ fragment Product on Product {
       stage
     }
   }
-  updatedAt
   updatedBy {
     ... on User {
       remoteTypeName: __typename
@@ -17,7 +19,6 @@ fragment Product on Product {
       stage
     }
   }
-  publishedAt
   publishedBy {
     ... on User {
       remoteTypeName: __typename
@@ -25,14 +26,12 @@ fragment Product on Product {
       stage
     }
   }
-  name
-  slug
-  description {
-    ... on RichText {
-      raw
-      html
-      markdown
-      text
+  articles {
+    ... on Article {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
     }
   }
+  type
 }

@@ -58,10 +58,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-gatsby-cloud`,
     {
-      resolve: 'gatsby-source-graphcms',
+      resolve: 'gatsby-source-graphql',
         options: {
           // Your GraphCMS API endpoint. Available from your project settings.
-          endpoint: process.env.GRAPHCMS_ENDPOINT,
+          typeName: `GraphCMS`,
+          fieldName: `gcms`,
+          url: process.env.GRAPHCMS_ENDPOINT,
         },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
