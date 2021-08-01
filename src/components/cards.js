@@ -8,8 +8,8 @@ import '../styles/styles.scss'
 const pageQuery = graphql`
     {
         gcms {
-            presses {
-                pressName
+            events {
+                eventName
                 articles {
                     name
                     slug
@@ -20,20 +20,19 @@ const pageQuery = graphql`
 `
 
 
-const Press = () => {
+const Cards = () => {
     const {
-        gcms: { presses },
+        gcms: { events },
     } = useStaticQuery(pageQuery);
 
     return (
-        presses.map(({ ...press }) => (
-            <div className="page__menu__component">
-                {press.pressName}
+        events.map(({ ...event }) => (
+            <div className="card__menu__component">
                 <ul>
-                {press.articles.map(({ slug, ...article }) => (
-                    <div className="menu__component__wrap">
+                {event.articles.map(({ slug, ...article }) => (
+                    <div className="card__component__wrap">
                         <li>
-                            <Link key={slug} to={`/${slug}`} activeClassName="article__menu__active">
+                            <Link key={slug} to={`/${slug}`}>
                                 {article.name} 
                             </Link>
                         </li>
@@ -45,4 +44,4 @@ const Press = () => {
     ));
 };
 
-export default Press;
+export default Cards;
