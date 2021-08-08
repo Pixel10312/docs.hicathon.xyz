@@ -16,7 +16,7 @@ const DocPage = ({
         gcms: { article },
         },
     }) => {
-        const [active, setActive] = useState(false)
+        const [active, setActive] = useState(true)
 
         useEffect(() => {
             if (window.outerWidth < 1025) {
