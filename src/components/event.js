@@ -8,7 +8,7 @@ import '../styles/styles.scss'
 const pageQuery = graphql`
     {
         gcms {
-            events {
+            events(orderBy: eventId_DESC) {
                 eventName
                 articles {
                     name
