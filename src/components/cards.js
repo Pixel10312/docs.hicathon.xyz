@@ -11,6 +11,7 @@ const pageQuery = graphql`
             events {
                 eventName
                 articles {
+                    date
                     name
                     slug
                 }
@@ -33,7 +34,7 @@ const Cards = () => {
                     <div className="card__component__wrap">
                         <li>
                             <Link key={slug} to={`/${slug}`}>
-                                {article.name} 
+                                {article.name} {article.date}
                             </Link>
                         </li>
                     </div>

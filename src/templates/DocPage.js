@@ -49,7 +49,7 @@ const DocPage = ({
                         <h1 className="article__title">{article.name}</h1>
                         <hr></hr>
                         <div className="article__tags">
-                            <h3>WG {article.wgNumber} | {article.name}</h3>
+                            <h3>{article.name} | {article.date}</h3>
                         </div>
                         
                         <div className="article__parse__string" dangerouslySetInnerHTML={{__html: article.articlecontent.html }}></div>
@@ -63,7 +63,7 @@ export const docQuery = graphql`
     query docPageQuery($id: ID!) {
         gcms {
             article(where: { id: $id }) {
-                wgNumber
+                date
                 name
                 articlecontent {
                     html

@@ -43,7 +43,11 @@ const IndexPage = () => {
             <div className="page__content">
                 <h1>📕 Hicathon Docs</h1>
                 <hr></hr><br></br>
-                <div>At the intersection of crypto, art, and technology, Hic Et Nunc (HEN), the first Tezos-based NFT marketplace, has undoubtedly left an indelible mark on the metaverse as a bohemian and decentralised movement.<br /><br /> While yet in its nascent stage, 150 volunteers from 77 countries banded together to be a part of the first hackathon, or “hicathon”, from May 22nd to 23rd in a purely community-led and volunteer-driven manner to support and accelerate the platform’s development further.<br /><br /> The following is a comprehensive summary of the main Working Groups (WG)  during the hicathon and provides a succinct understanding of the core issues they tackled, their journey, and their accomplishments:
+                <div>At the intersection of crypto, art, and technology, Hic Et Nunc (HEN), the first Tezos-based NFT marketplace, has undoubtedly left an indelible mark on the metaverse as a bohemian and decentralised movement.
+
+While yet in its nascent stage, 150 volunteers from 77 countries banded together to be a part of the first hackathon, or “hicathon”, from May 22nd to 23rd in a purely community-led and volunteer-driven manner to support and accelerate the platform’s development further. Afterwards, 7 teams met again during September 2021 to transform their prototypes into functioning products ready to be implemented or to be used. 
+
+The following is a comprehensive summary of the journey done by the Working Groups (WG) during the hicathon, from May to September 2021, and provides a succinct understanding of the core issues they tackled, their journey, and their accomplishments:
             </div>
                 <Cards />
                 </div>
