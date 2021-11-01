@@ -49,10 +49,26 @@ const DocPage = ({
                         <h1 className="article__title">{article.name}</h1>
                         <hr></hr>
                         <div className="article__tags">
-                            <h3>{article.name} | {article.date}</h3>
+                            <h3>Summary from the hicathon (May 2021)</h3>
                         </div>
                         
                         <div className="article__parse__string" dangerouslySetInnerHTML={{__html: article.articlecontent.html }}></div>
+                        
+                        {article.article2 && (<>
+                        <br />
+                            <hr />
+                            <div className="article__tags">
+                                <h3>Summary from the post-hicathon (September 2021)</h3>
+                            </div>
+                            
+                            <div className="article__parse__string" dangerouslySetInnerHTML={{__html: article.article2.html }}></div>
+
+                        </>)}
+
+                        {article.link && (<>
+                            <hr />
+                            <a href={article.link} className="article__link">View the work that {article.name} accomplished over hicathon!</a>
+                        </>)}
                     </React.Fragment>
                 </div>
             </div>
@@ -68,6 +84,10 @@ export const docQuery = graphql`
                 articlecontent {
                     html
                 }
+                article2 {
+                    html
+                }
+                link
             }
         }
     }
