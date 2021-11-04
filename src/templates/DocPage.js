@@ -42,13 +42,20 @@ const DocPage = ({
                     <div className="page__menu__content">
                         <Event />
                     </div>  
-                )}                  
+                )}
             </div>
                 <div className="page__content">
+                    {article.article2 && article.link && (
+                        <div className="page__menu__jump">
+                            <a href="#may">Jump to the May Summary</a>
+                            <a href="#sept">Jump to the Sept. Summary</a>
+                            <a href={article.link}>Jump to the WG's doc!</a>
+                        </div>
+                    )}
                     <React.Fragment>
                         <h1 className="article__title">{article.name}</h1>
                         <hr></hr>
-                        <div className="article__tags">
+                        <div className="article__tags" id="may">
                             <h3>Summary from the hicathon (May 2021)</h3>
                         </div>
                         
@@ -57,7 +64,7 @@ const DocPage = ({
                         {article.article2 && (<>
                         <br />
                             <hr />
-                            <div className="article__tags">
+                            <div className="article__tags" id="sept">
                                 <h3>Summary from the post-hicathon (September 2021)</h3>
                             </div>
                             
