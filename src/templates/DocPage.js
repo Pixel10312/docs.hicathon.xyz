@@ -47,7 +47,10 @@ const DocPage = ({
                 <div className="page__content">
                     {article.article2 && article.link && (
                         <div className="page__menu__jump">
-                            {article.article && (
+                            {article.article3 && (
+                                <a href="#full">Jump to the Full Report</a>
+                            )}
+                            {article.articlecontent && (
                                 <a href="#may">Jump to the May Summary</a>
                             )}
                             {article.article2 && (
@@ -57,11 +60,21 @@ const DocPage = ({
                         </div>
                     )}
                     <React.Fragment>
-                        <h1 className="article__title">{article.name}</h1>
-                        <hr></hr>
+                        <h1 className="article__title" id={article.article3 && "full"}>{article.name}</h1>
 
-                        {article.article && (<>
-                            <div className="article__tags" id="may">
+                        {article.article3 && (<>
+                            <hr></hr>
+                            <div className="article__tags">
+                                <h3>Read the story of {article.name} from May to September 2021</h3>
+                            </div>
+                        
+                            <div className="article__parse__string" dangerouslySetInnerHTML={{__html: article.article3.html }}></div>
+                            <br />                     
+                        </>)}
+
+                        {article.articlecontent && (<>
+                            <hr id="may"/>
+                            <div className="article__tags">
                                 <h3>Summary from the hicathon (May 2021)</h3>
                             </div>
                         
@@ -69,9 +82,9 @@ const DocPage = ({
                         </>)}
 
                         {article.article2 && (<>
-                        <br />
-                            <hr />
-                            <div className="article__tags" id="sept">
+                            <br />
+                            <hr id="sept"/>
+                            <div className="article__tags">
                                 <h3>Summary from the post-hicathon (September 2021)</h3>
                             </div>
                             
@@ -99,6 +112,9 @@ export const docQuery = graphql`
                     html
                 }
                 article2 {
+                    html
+                }
+                article3 {
                     html
                 }
                 link
