@@ -65,7 +65,11 @@ const DocPage = ({
                         {article.article3 && (<>
                             <hr></hr>
                             <div className="article__tags">
-                                <h3>Read the story of {article.name} from May to September 2021</h3>
+                                {article.name !== 'Press Release' ? (
+                                    <h3>Read the story of {article.name} from May to September 2021, written by <a href={"https://twitter.com/" + article.author3}>{article.author3}</a></h3>
+                                ) : (
+                                    <h3>Written by <a href={"https://twitter.com/" + article.author3}>{article.author3}</a></h3>
+                                )}
                             </div>
                         
                             <div className="article__parse__string" dangerouslySetInnerHTML={{__html: article.article3.html }}></div>
@@ -75,7 +79,7 @@ const DocPage = ({
                         {article.articlecontent && (<>
                             <hr id="may"/>
                             <div className="article__tags">
-                                <h3>Summary from the hicathon (May 2021)</h3>
+                                <h3>Summary from the hicathon (May 2021), written by <a href={"https://twitter.com/" + article.author1}>{article.author1}</a></h3>
                             </div>
                         
                             <div className="article__parse__string" dangerouslySetInnerHTML={{__html: article.articlecontent.html }}></div>                        
@@ -85,7 +89,7 @@ const DocPage = ({
                             <br />
                             <hr id="sept"/>
                             <div className="article__tags">
-                                <h3>Summary from the post-hicathon (September 2021)</h3>
+                                <h3>Summary from the post-hicathon (September 2021), written by <a href={"https://twitter.com/" + article.author2}>{article.author2}</a></h3>
                             </div>
                             
                             <div className="article__parse__string" dangerouslySetInnerHTML={{__html: article.article2.html }}></div>
@@ -118,6 +122,10 @@ export const docQuery = graphql`
                     html
                 }
                 link
+
+                author1
+                author2
+                author3
             }
         }
     }
